@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="request-and-response-entities">
+    <output-path>$PROJECT_DIR$/out/artifacts/request_and_response_entities</output-path>
+    <root id="archive" name="request-and-response-entities.jar">
+      <element id="dir-copy" path="$PROJECT_DIR$/ir.dotin.server/src/main/java/entities/requests" />
+      <element id="dir-copy" path="$PROJECT_DIR$/ir.dotin.server/src/main/java/entities/responses" />
+    </root>
+  </artifact>
+</component>
