@@ -3,10 +3,10 @@ package helpers;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class TerminalDataRecorder implements Recorder {
+public class TerminalOutputRecorder implements Recorder {
     FileWriter fileWriter;
 
-    public TerminalDataRecorder(String filePath) throws IOException {
+    public TerminalOutputRecorder(String filePath) throws IOException {
         fileWriter = new FileWriter(filePath);
     }
 

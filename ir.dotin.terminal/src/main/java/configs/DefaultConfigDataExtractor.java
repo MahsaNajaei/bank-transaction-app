@@ -37,7 +37,6 @@ public class DefaultConfigDataExtractor implements TerminalConfigDataExtractor {
         List<TerminalRequest> terminalRequests = new ArrayList<>();
         for (int i = 0; i < transactionNodes.getLength(); i++) {
             NamedNodeMap transactionAttributes = transactionNodes.item(i).getAttributes();
-            //Todo check invalid input
             try {
                 int transactionId = Integer.parseInt(transactionAttributes.getNamedItem("id").getNodeValue());
                 int depositId = Integer.parseInt(transactionAttributes.getNamedItem("deposit").getNodeValue());

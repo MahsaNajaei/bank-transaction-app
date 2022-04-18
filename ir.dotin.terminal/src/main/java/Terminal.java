@@ -3,8 +3,8 @@ import entities.requests.TerminalRequest;
 import entities.responses.TerminalResponse;
 import helpers.Recorder;
 import helpers.TerminalConnectionHandler;
-import helpers.TerminalDataRecorder;
 import helpers.TerminalLogger;
+import helpers.TerminalOutputRecorder;
 
 import java.io.IOException;
 
@@ -15,7 +15,7 @@ public class Terminal {
 
     public Terminal(String serverIP, int serverPort) throws IOException {
         terminalConnectionHandler = new TerminalConnectionHandler(serverIP, serverPort);
-        outputRecorder = new TerminalDataRecorder("terminal.out");
+        outputRecorder = new TerminalOutputRecorder("response.xml");
     }
 
     void processRequest(TerminalRequest request) {
@@ -29,7 +29,7 @@ public class Terminal {
                 outputRecorder.record(output);
                 TerminalLogger.getLogger().info("Response is recorded successfully!" + "\n");
             } catch (IOException e) {
-                e.printStackTrace();
+                TerminalLogger.getLogger().severe("FileWriter failure while recording terminal output! " + "\n" + e);
             }
         }
     }

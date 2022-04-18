@@ -3,12 +3,12 @@ package entities.database;
 import Exceptions.DatabaseNotLoadedException;
 
 import java.math.BigDecimal;
-import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class DefaultServerDAO implements ServerDAO {
 
-    private static Map<Integer, CustomerDeposit> databaseInfoByDepositID = new HashMap<>();
+    private static Map<Integer, CustomerDeposit> databaseInfoByDepositID = new ConcurrentHashMap<>();
     private static DefaultServerDAO defaultServerDAO = new DefaultServerDAO();
 
     private DefaultServerDAO() {

@@ -2,7 +2,7 @@ out/
 *.class
 server.out
 term21374.log
-terminal.out
+response.xml
 
 target/
 pom.xml.tag

@@ -7,7 +7,6 @@ import java.util.logging.Level;
 
 public class ServerTest {
     public static void main(String[] args) {
-        //Todo make serverLogger and database synchronized
         ConfigProperties configProperties = null;
         try {
             configProperties = new ConfigHandler().loadConfigs();
