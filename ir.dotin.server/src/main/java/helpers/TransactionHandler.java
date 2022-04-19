@@ -18,14 +18,13 @@ public class TransactionHandler {
         TransactionType transactionType = transactionRequest.getTransactionType();
         CustomResponseStatus customResponseStatus;
         String responseMessage;
-
         synchronized (DefaultServerDAO.getDefaultServerDAO()) {
             DepositInfo depositInfo = DefaultServerDAO.getDefaultServerDAO().retrieveDepositInfo(transactionRequest.getDepositId());
             customResponseStatus = switch (transactionType) {
                 case DEPOSIT -> deposit(transactionRequest.getAmount(), depositInfo);
                 case WITHDRAW -> withdraw(transactionRequest.getAmount(), depositInfo);
             };
-            responseMessage = generateResponseMessage(transactionRequest.getTransactionId(), depositInfo.getDepositId(), depositInfo.getBalance());
+            responseMessage = generateResponseMessage(transactionRequest.getTransactionId(), depositInfo.getDepositId(), DefaultServerDAO.getDefaultServerDAO().retrieveDepositInfo(depositInfo.getDepositId()).getBalance());
         }
         return new DefaultResponse(responseMessage, customResponseStatus);
     }
@@ -42,7 +41,7 @@ public class TransactionHandler {
     }
 
     private CustomResponseStatus withdraw(BigDecimal amount, DepositInfo depositInfo) throws DatabaseNotLoadedException {
-        if (depositInfo.getBalance().compareTo(amount) <= 0) {
+        if (depositInfo.getBalance().compareTo(amount) < 0) {
             ServerLogger.getLogger().warning("withdraw is not permitted due to " + CustomResponseStatus.INSUFFICIENT_BALANCE);
             return CustomResponseStatus.INSUFFICIENT_BALANCE;
         }

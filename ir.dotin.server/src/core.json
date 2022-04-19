@@ -12,6 +12,24 @@
       "id": "35527439",
       "initialBalance": "0",
       "upperBound": "0"
+    },
+    {
+      "customer": "Mahsa Najaei",
+      "id": "33333333",
+      "initialBalance": "3,000",
+      "upperBound": "200,000"
+    },
+    {
+      "customer": "Shokufe Hosseini",
+      "id": "44444444",
+      "initialBalance": "4,000",
+      "upperBound": "5,000,000"
+    },
+    {
+      "customer": "Hesam Bavafa",
+      "id": "55555555",
+      "initialBalance": "5,000",
+      "upperBound": "100,000"
     }
   ],
   "outLog": "server.out"

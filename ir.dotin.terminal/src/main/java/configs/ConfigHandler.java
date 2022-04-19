@@ -1,5 +1,5 @@
 package configs;
 
 public interface ConfigHandler {
-   ConfigProperties loadConfigs();
+   ConfigProperties loadConfigs(String filePath);
 }

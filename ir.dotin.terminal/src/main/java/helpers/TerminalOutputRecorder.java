@@ -12,7 +12,7 @@ public class TerminalOutputRecorder implements Recorder {
 
     @Override
     public void record(String data) throws IOException {
-        fileWriter.write(data + "\n");
+        fileWriter.write(OutputFormatter.buildXMLFormat(data) + "\n");
         fileWriter.flush();
     }
 }

@@ -17,10 +17,10 @@ public class TerminalConfigHandler implements ConfigHandler {
         this.extractor = extractor;
     }
 
-    public ConfigProperties loadConfigs() {
+    public ConfigProperties loadConfigs(String configPath) {
         ConfigProperties configProperties = null;
         try {
-            Document document = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse("ir.dotin.terminal\\src\\terminal.xml");
+            Document document = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(configPath);
 
             String serverIp = extractor.extractServerIp(document);
             int serverPort = extractor.extractServerPort(document);

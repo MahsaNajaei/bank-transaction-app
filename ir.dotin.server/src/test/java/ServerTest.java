@@ -7,6 +7,7 @@ import java.util.logging.Level;
 
 public class ServerTest {
     public static void main(String[] args) {
+
         ConfigProperties configProperties = null;
         try {
             configProperties = new ConfigHandler().loadConfigs();

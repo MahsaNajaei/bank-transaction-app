@@ -7,9 +7,12 @@
         <groupId>ir.dotin</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
+
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>ir.dotin.server</artifactId>
+    <packaging>jar</packaging>
+
 
     <properties>
         <maven.compiler.source>18</maven.compiler.source>
