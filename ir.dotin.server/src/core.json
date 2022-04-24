@@ -1,36 +1,30 @@
 {
-  "port": 8080,
-  "deposits": [
-    {
-      "customer": "Ali Alavi",
-      "id": "33227781",
-      "initialBalance": "1,000",
-      "upperBound": "1,000,000"
-    },
-    {
-      "customer": "Reza Rezaei",
-      "id": "35527439",
-      "initialBalance": "0",
-      "upperBound": "0"
-    },
-    {
-      "customer": "Mahsa Najaei",
-      "id": "33333333",
-      "initialBalance": "3,000",
-      "upperBound": "200,000"
-    },
-    {
-      "customer": "Shokufe Hosseini",
-      "id": "44444444",
-      "initialBalance": "4,000",
-      "upperBound": "5,000,000"
-    },
-    {
-      "customer": "Hesam Bavafa",
-      "id": "55555555",
-      "initialBalance": "5,000",
-      "upperBound": "100,000"
-    }
-  ],
-  "outLog": "server.out"
+  "port" : 8080,
+  "outLog" : "server.out",
+  "deposits" : [ {
+    "upperBound" : "1,000,000",
+    "initialBalance" : "2,000",
+    "id" : "33227781",
+    "customer" : "Ali Alavi"
+  }, {
+    "upperBound" : "0",
+    "initialBalance" : "0",
+    "id" : "35527439",
+    "customer" : "Reza Rezaei"
+  }, {
+    "upperBound" : "200,000",
+    "initialBalance" : "4,000",
+    "id" : "33333333",
+    "customer" : "Mahsa Najaei"
+  }, {
+    "upperBound" : "5,000,000",
+    "initialBalance" : "5,000",
+    "id" : "44444444",
+    "customer" : "Shokufe Hosseini"
+  }, {
+    "upperBound" : "100,000",
+    "initialBalance" : "6,000",
+    "id" : "55555555",
+    "customer" : "Hesam Bavafa"
+  } ]
 }

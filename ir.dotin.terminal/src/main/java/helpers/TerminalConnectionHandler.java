@@ -16,9 +16,9 @@ public class TerminalConnectionHandler {
 
     public TerminalConnectionHandler(String ip, int port) throws IOException {
         socket = new Socket(ip, port);
-        ServerLogger.getLogger().info("Terminal is connected successfully to the server! [" + socket.getInetAddress() + "]");
-        requestOutputStream = new ObjectOutputStream(socket.getOutputStream());
-        responseInputStream = new ObjectInputStream(socket.getInputStream());
+        ServerLogger.getLogger().info("Terminal is connected successfully to the server! [" + this.socket.getInetAddress() + "]");
+        requestOutputStream = new ObjectOutputStream(this.socket.getOutputStream());
+        responseInputStream = new ObjectInputStream(this.socket.getInputStream());
     }
 
     public boolean sendRequest(TerminalRequest request) {

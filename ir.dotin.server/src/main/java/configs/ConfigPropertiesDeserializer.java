@@ -26,7 +26,7 @@ public class ConfigPropertiesDeserializer extends StdDeserializer<ConfigProperti
     }
 
     @Override
-    public ConfigProperties deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws IOException, JacksonException {
+    public ConfigProperties deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws IOException{
         JsonNode rootNode = jsonParser.getCodec().readTree(jsonParser);
 
         int port = rootNode.get("port").asInt();

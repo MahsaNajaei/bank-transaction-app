@@ -52,6 +52,6 @@ public class TransactionHandler {
     }
 
     private String generateResponseMessage(int transactionId, int depositId, BigDecimal balance) {
-        return "id:" + transactionId + ", " + "deposit:" + depositId + ", " + "currentBalance:" + balance;
+        return "id:" + transactionId + ", deposit:" + depositId + ", currentBalance:" + balance ;
     }
 }

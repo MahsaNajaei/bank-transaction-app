@@ -3,7 +3,6 @@ import configs.DefaultConfigDataExtractor;
 import configs.ConfigProperties;
 import configs.TerminalConfigHandler;
 import helpers.TerminalLogger;
-import helpers.OutputFormatter;
 
 import java.io.IOException;
 import java.util.List;
@@ -13,7 +12,7 @@ public class TerminalTest {
     public static void main(String[] args) {
 
         try {
-            Thread.sleep(1300);
+            Thread.sleep(4500);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

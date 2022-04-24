@@ -33,8 +33,7 @@ public class DefaultRequestValidator implements RequestValidator {
 
     private synchronized boolean checkDuplicatedTransactionId(TransactionRequest transactionRequest) {
         boolean isDuplicated = transactionIdArchive.contains(transactionRequest.getTransactionId());
-       // if (!isDuplicated)
-            transactionIdArchive.add(transactionRequest.getTransactionId());
+        transactionIdArchive.add(transactionRequest.getTransactionId());
         return isDuplicated;
     }
 

@@ -7,10 +7,9 @@ import java.util.logging.Level;
 
 public class ServerTest {
     public static void main(String[] args) {
-
         ConfigProperties configProperties = null;
         try {
-            configProperties = new ConfigHandler().loadConfigs();
+            configProperties = ConfigHandler.getConfigHandler().loadConfigs();
             ServerLogger.addFileHandler(configProperties.getLogPath());
         } catch (IOException e) {
             ServerLogger.getLogger().log(Level.SEVERE, "unsuccessful config loading!", e);

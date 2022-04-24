@@ -1,6 +1,7 @@
 package entities.database;
 
 import Exceptions.DatabaseNotLoadedException;
+import configs.ConfigHandler;
 
 import java.math.BigDecimal;
 import java.util.Map;
@@ -23,6 +24,7 @@ public class DefaultServerDAO implements ServerDAO {
     public synchronized void updateDepositBalance(int depositId, BigDecimal updatedBalance) {
         DepositInfo depositInfo = databaseInfoByDepositID.get(depositId).getDepositInfo();
         depositInfo.setBalance(updatedBalance);
+        ConfigHandler.getConfigHandler().updateConfigFile(databaseInfoByDepositID);
     }
 
     @Override
@@ -37,12 +39,10 @@ public class DefaultServerDAO implements ServerDAO {
 
     public static void loadDB(Map<Integer, CustomerDeposit> dbInfo) {
         if (databaseInfoByDepositID.size() == 0)
-            databaseInfoByDepositID.putAll(dbInfo);
+            databaseInfoByDepositID = dbInfo;
     }
 
     public static synchronized ServerDAO getDefaultServerDAO() throws DatabaseNotLoadedException {
-        if (defaultServerDAO == null)
-            defaultServerDAO = new DefaultServerDAO();
         if (databaseInfoByDepositID.size() == 0)
             throw new DatabaseNotLoadedException("Database should be loaded in order to use DefaultServerDAO!");
         return defaultServerDAO;
