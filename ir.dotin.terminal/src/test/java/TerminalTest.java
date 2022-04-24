@@ -12,7 +12,7 @@ public class TerminalTest {
     public static void main(String[] args) {
 
         try {
-            Thread.sleep(4500);
+            Thread.sleep(3900);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

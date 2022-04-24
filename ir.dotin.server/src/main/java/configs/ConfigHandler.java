@@ -31,7 +31,7 @@ public class ConfigHandler {
         return configPropertiesMapper.readValue(configFile, ConfigProperties.class);
     }
 
-    public synchronized void updateConfigFile(Map<Integer, CustomerDeposit> databaseInfo) {
+    public  void updateConfigFile(Map<Integer, CustomerDeposit> databaseInfo) {
 
         try {
             JSONObject configFileContent = (JSONObject) new JSONParser().parse(new FileReader(configFile));

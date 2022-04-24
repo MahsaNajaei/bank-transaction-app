@@ -1,13 +1,11 @@
 package configs;
 
-import com.fasterxml.jackson.core.JacksonException;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import entities.database.CustomerDeposit;
-import entities.database.DatabaseInfoBuilder;
 
 import java.io.IOException;
 import java.math.BigDecimal;
@@ -45,7 +43,7 @@ public class ConfigPropertiesDeserializer extends StdDeserializer<ConfigProperti
             String upperBoundStr = customerDepositNode.get("upperBound").asText().replaceAll(",", "");
             BigDecimal upperBound = new BigDecimal(upperBoundStr);
 
-            CustomerDeposit customerDeposit = new DatabaseInfoBuilder(fullName, depositId, balance, upperBound).build();
+            CustomerDeposit customerDeposit = new CustomerDeposit(fullName, depositId, balance, upperBound);
             databaseInfoByDepositId.put(depositId, customerDeposit);
         }
 
